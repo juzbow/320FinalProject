@@ -1,22 +1,27 @@
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
 </head>
 <body>
 
    
-    <div class="splash">
-    <h1 class="fade-in">Welcome to Gentle Wake</h1>
-    </div>
+    <!-- <div class="splash">
+    <h1 class="fade-in" id="main-h1">Welcome to Gentle Wake</h1>
+    </div> -->
    
 
 <header id="header">
     <div class="main-div">
         <div id="logo">
+            <a href="index.html">
             <img id="cat" src="images/catYawn.png" alt="cat yawning logo">
+            </a>
         </div>
         <h1 id="home">Gentle Wake</h1>
         <div id="nav-bar">
@@ -33,9 +38,17 @@
     </div>
 </header>
 
-<section id="main-section">
-    <p>This is the main section content.</p>
-</section>
+<main id="main-section">
+        <div id="login-error-msg-holder">
+            <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+          </div>
+        <form id="login-form">
+            <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+            <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+            <input type="submit" value="Login" id="login-form-submit">
+          </form>
+    
+</main>
     
     
 </body>
