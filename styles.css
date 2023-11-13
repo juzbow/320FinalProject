@@ -19,7 +19,7 @@ body{
     text-align: center;
     padding-top: 15%;
     animation: fadeIn 6s ease-in-out forwards;
-    z-index: 0;
+    z-index: 2;
     pointer-events: none;
 }
 
@@ -33,8 +33,11 @@ body{
     }
     to{
         opacity: 0;
-        background: transparent;
     }
+}
+
+.splash.fade-in.animation-done {
+    z-index: -1;
 }
 
 .fade-in{
@@ -162,6 +165,7 @@ a:hover{
     border: 1px solid #8a0000;
     background-color: #e58f8f;
     opacity: 0;
+    z-index: 5;
     font-family: 'Pacifico';
   }
 
@@ -233,5 +237,7 @@ a:hover{
 input {
     padding: 5px;
 }
+
+
 
 

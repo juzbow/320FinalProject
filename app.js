@@ -1,56 +1,58 @@
-
-const splash = document.querySelector(".splash");
-
 document.addEventListener('DOMContentLoaded', (e) => {
+    handleSplashScreen();
+    handleLoginForm();
+});
+
+function handleSplashScreen() {
+    const splash = document.querySelector(".splash");
+
     setTimeout(() => {
         splash.addEventListener('animationend', () => {
-            splash.style.display = 'none';
+            splash.classList.add('animation-done');
         });
         splash.classList.add('fade-in');
     }, 5000);
+}
 
-
-
+function handleLoginForm() {
     const check = document.querySelector("#check");
     const password = document.querySelector("#password-field");
     const loginForm = document.querySelector("#login-form");
     const errorMsg = document.querySelector("#login-error-msg");
-
-    const togglePassword = () => {
-        password.type = check.checked ? "text" : "password";
-    };
 
     if (check && password && loginForm && errorMsg) {
         check.addEventListener('click', togglePassword);
 
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
-
-            errorMsg.style.display = 'none';
+            toggleError(false);
 
             const username = document.getElementById('username-field').value;
             const enteredPassword = document.getElementById('password-field').value;
 
-            // Example: Check if username and password are correct
+            
             if (username === 'user' && enteredPassword === 'password') {
                 console.log('Login successful');
+                
+                window.location.href = 'about.html';
             } else {
-                errorMsg.style.display = 'block';
+                toggleError(true);
             }
         });
     } else {
-        console.error("not found");
+        console.error("One or more elements not found");
     }
-});
 
+    function togglePassword() {
+        password.type = check.checked ? "text" : "password";
+    }
 
-
-
-
-
-
-
-
-
-
+    function toggleError(showError) {
+        if (showError) {
+            errorMsg.style.opacity = 1;
+        } else {
+            errorMsg.style.opacity = 0;
+        }
+    }
+}
 
