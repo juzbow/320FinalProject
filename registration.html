@@ -49,14 +49,22 @@
         <label for="phone">Phone Number</label>
         <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
 
-        <div id="radio-div">
-        <label for="gender" style="text-decoration: underline; font-size: 20px;">Gender:</label><br>
-        <input type="radio" name="gender" id="male" value="Male">
-        <label for="male" style="font-size: 18px;">Male</label><br>
-        <input type="radio" name="gender" id="female" value="Female">
-        <label for="female" style="font-size: 18px;">Female</label><br>
-        <input type="text" name="gender" id="other" placeholder="Other">
+        <label for="gender" style="text-decoration: underline; font-size: 20px;">Gender:</label>
+        <div class="radio-container">
+            <div class="radio-label">
+                <input type="radio" name="gender" id="male" value="Male">
+                <label for="male" style="font-size: 18px;">Male</label>
+            </div>
+            <div class="radio-label">
+                <input type="radio" name="gender" id="female" value="Female">
+                <label for="female" style="font-size: 18px;">Female</label>
+            </div>
+            <div class="radio-label">
+                <input type="radio" name="gender" id="other-radio" value="Other">
+                <label for="other-radio" style="font-size: 18px;">Other</label>
+            </div>
         </div>
+       
 
         <label for="state">State</label>
         <input type="text" name="state" id="state" list="state-list">
@@ -129,10 +137,11 @@
         <textarea name="message" id="message" cols="20" rows="10" placeholder="Type your message here"></textarea>
    
 
-        <input style="margin-top:10px; cursor: pointer; border: 3px solid #000000;" type="submit" value="Register">
-
+        <input style="margin-top:10px; cursor: pointer; border: 3px solid #000000;" type="submit" id="submit" value="Register">
+        <input style="margin-top:10px; cursor: pointer; border: 3px solid #000000;" type="reset" id="reset" value="Reset">
 
 
     </form>
+    <script src="app.js"></script>
 </body>
 </html>

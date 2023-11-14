@@ -343,7 +343,7 @@ input {
  }
 
  #registration-form input:focus {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(245, 159, 79);
     width:100%
   }
 
@@ -357,6 +357,7 @@ input {
     font-family: 'Pacifico';
     color:#3a3a3a;
     font-size: 18px;
+    border: 3px solid #000000;
 }
 
   #radio-div{
@@ -377,6 +378,22 @@ input {
 
 #dropdown-reg-reg:hover {
     background-color: rgb(55, 74, 149);
+}
+
+
+.radio-container {
+    display: flex;
+    align-items: center;
+}
+
+.radio-label {
+    margin-right: 20px; /* Adjust the margin as needed */
+    display: flex;
+    align-items: center;
+}
+
+.radio-label input {
+    margin-right: 5px; /* Adjust the margin as needed */
 }
 
 

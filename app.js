@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', (e) => {
     handleSplashScreen();
     handleLoginForm();
+    handleResetClick();
 });
 
 function handleSplashScreen() {
@@ -53,6 +54,38 @@ function handleLoginForm() {
         } else {
             errorMsg.style.opacity = 0;
         }
+    }
+}
+
+function handleResetClick() {
+    const reset = document.querySelector("#reset");
+
+    if (reset) {
+        reset.addEventListener("click", () => {
+            document.querySelector("#firstname").value = "";
+            document.querySelector("#firstname").value = "";
+            document.querySelector("#lastname").value = "";
+            document.querySelector("#email").value = "";
+            document.querySelector("#email-verify").value = "";
+            document.querySelector("#password").value = "";
+            document.querySelector("#phone").value = "";
+            document.querySelector("#message").value = "";
+            const stateDropdown = document.querySelector("#state");
+            stateDropdown.value = "";
+            document.querySelector("#zipcode").value = "";
+        });
+    } else {
+        console.error("Reset button not found");
+    }
+}
+
+function handleRegisterClick(){
+    const register = document.querySelector("#register");
+
+    if(register){
+        register.addEventListener("click", () =>{
+            
+        })
     }
 }
 
