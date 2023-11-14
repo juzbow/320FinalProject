@@ -318,6 +318,68 @@ input {
     text-decoration: underline dotted;
  }
 
+ #registration-form{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding-top: 100px;
+    margin: 80px;
+    
+ }
+ #registration-form label{
+    color: rgb(137, 156, 230);
+    font-family: 'Pacifico';
+ }
+ #registration-form input{
+    border-radius: 10px;
+    outline: none;
+    background-color: rgb(245, 159, 79);
+    padding: 0px 0px 5px 5px;
+    color: rgb(13, 33, 116);
+    font-family: 'Pacifico';
+    font-size: 20px;
+    border: 3px solid #000000;
+ }
+
+ #registration-form input:focus {
+    background-color: rgb(255, 255, 255);
+    width:100%
+  }
+
+#registration-form input::placeholder,
+#registration-form textarea::placeholder {
+    color: #3a3a3a;
+}
+
+#registration-form textarea{
+    background-color: rgb(137, 156, 230);
+    font-family: 'Pacifico';
+    color:#3a3a3a;
+    font-size: 18px;
+}
+
+  #radio-div{
+    padding:5px;
+  }
+
+#dropdown-login-reg{
+    background-color: rgb(9, 28, 104);
+}
+#dropdown-reg-reg{
+    background-color: rgb(9, 28, 104);
+}
+ 
+
+#dropdown-login-reg:hover {
+    background-color: rgb(55, 74, 149);
+}
+
+#dropdown-reg-reg:hover {
+    background-color: rgb(55, 74, 149);
+}
+
+
 
 
 
