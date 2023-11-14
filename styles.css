@@ -224,7 +224,7 @@ a:hover{
     align-content: center;
     position: fixed; 
     top: 90px; 
-    left: 50%; 
+    left: 60%; 
     transform: translateX(-50%); 
     z-index: 1; 
  }
@@ -237,6 +237,87 @@ a:hover{
 input {
     padding: 5px;
 }
+
+#about-divs{
+    display:inline-flex;
+    height:345px;
+}
+
+#left-div{
+    width:550px;
+    border: 3px solid rgb(255, 232, 29);
+    border-radius: 20px;
+    z-index: 3;
+    position: relative;
+    bottom: 90px;
+    left: 30px;
+    background-color: rgb(214, 146, 50);
+    font-family: 'Pacifico';
+}
+#left-div h2{
+    font-size: 40px;
+    text-align: center;
+    position: relative;
+    right: 90px;
+    color: rgb(38, 48, 126);
+}
+#left-div h3{
+    position: absolute;
+    left: 50px;
+    color: rgb(38, 48, 126);
+
+}
+
+#about-h2{
+    position: relative;
+    left:15%;
+    font-size: 30px;
+}
+#right-div{
+    width:550px;
+    z-index: 3;
+    border: 3px solid rgb(255, 232, 29);
+    border-radius: 20px;
+    position: relative;
+    top: 2px;
+    right: 220px;
+    background-color: rgb(38, 48, 126);
+    font-family: 'Pacifico';
+}
+
+#black-cat-about{
+    width: 200px;
+    height: 200px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    position: fixed; 
+    top: 220px; 
+    left: 48%; 
+    transform: translateX(-50%); 
+    z-index: 4; 
+ }
+
+ #right-div ul{
+    font-size: 30px;
+    position: relative;
+    bottom:29px;
+    text-align: center;
+    list-style-type: none;
+ }
+
+ #right-div ul  p{
+    font-size: 17px;
+    color: rgb(214, 146, 50);
+ }
+
+ #about-h2{
+    font-family: 'Pacifico';
+    color: rgb(214, 146, 50);
+    font-size: 40px;
+    text-decoration: underline dotted;
+ }
+
 
 
 
