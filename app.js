@@ -93,7 +93,7 @@ function handleRegisterSubmit() {
             console.log('Form validation failed');
         } else {
             console.log('Registration successful');
-          
+            
         }
     });
 }

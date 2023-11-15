@@ -30,30 +30,30 @@
         </div>
     </header>
 
-    <form id="registration-form" action="confirmed.html" method="get">
-        <label for="firstname">First Name</label>
+    <form id="registration-form" action="confirmed.html" method="get" >
+        <label for="firstname">First Name<span id="required-field" style="color: red;">*</span></label>
         <input type="text" name="firstname" id="firstname" placeholder="Tom" required>
 
-        <label for="lastname">Last Name</label>
+        <label for="lastname">Last Name<span id="required-field" style="color: red;">*</span></label>
         <input type="text" name="lastname" id="lastname" placeholder="Riddle" required>
 
 
         
-        <label for="email">Email</label>
+        <label for="email">Email<span id="required-field" style="color: red;">*</span></label>
         <input type="email" name="email" id="email" placeholder="yourEmailHere@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
               
-        <label for="email2">Re-Enter Email</label>
+        <label for="email2">Re-Enter Email<span id="required-field" style="color: red;">*</span></label>
         <input type="email" name="email2" id="email2" required>
         <span id="email-match-error" style="color: red;"></span>
            
 
 
 
-        <label for="password">Password</label>
+        <label for="password">Password<span id="required-field" style="color: red;">*</span></label>
         <input type="password" name="password" id="password" placeholder="password" required pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}">
         <span class="password-hint">Must be at least 8 characters long and include at least one number and one letter.</span>
 
-        <label for="phone">Phone Number</label>
+        <label for="phone">Phone Number<span id="required-field" style="color: red;">*</span></label>
         <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
 
         <label for="gender" style="text-decoration: underline; font-size: 20px;">Gender:</label>
