@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Gentle Wake Account</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <header id="header" style="position: fixed; top: 0; width: 100%; z-index: 100; background-image: linear-gradient(rgb(13, 33, 116), rgb(172, 92, 16)); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
@@ -36,15 +37,21 @@
         <label for="lastname">Last Name</label>
         <input type="text" name="lastname" id="lastname" placeholder="Riddle" required>
 
+
+        
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" placeholder="yourEmailHere@gmail.com" required>
+        <input type="email" name="email" id="email" placeholder="yourEmailHere@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+              
+        <label for="email2">Re-Enter Email</label>
+        <input type="email" name="email2" id="email2" required>
+        <span id="email-match-error" style="color: red;"></span>
+           
 
 
-        <label for="email-verify">Re-Enter Email</label>
-        <input type="email" name="email-verify" id="email-verify" required>
 
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" placeholder="password" required>
+        <input type="password" name="password" id="password" placeholder="password" required pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}">
+        <span class="password-hint">Must be at least 8 characters long and include at least one number and one letter.</span>
 
         <label for="phone">Phone Number</label>
         <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
@@ -137,11 +144,12 @@
         <textarea name="message" id="message" cols="20" rows="10" placeholder="Type your message here"></textarea>
    
 
-        <input style="margin-top:10px; cursor: pointer; border: 3px solid #000000;" type="submit" id="submit" value="Register">
-        <input style="margin-top:10px; cursor: pointer; border: 3px solid #000000;" type="reset" id="reset" value="Reset">
+        <input type="submit" id="register" value="Register">
+        <input type="reset" id="reset" value="Reset">
 
 
     </form>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
