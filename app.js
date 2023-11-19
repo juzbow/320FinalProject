@@ -5,6 +5,7 @@ $(document).ready(function() {
     handleLoginForm();
     handleResetClick();
     handleRegisterSubmit();
+    favdate();
 });
 
 function handleSplashScreen() {
@@ -97,6 +98,18 @@ function handleRegisterSubmit() {
         }
     });
 }
+
+
+function favdate(){
+    const dateInput = $("#favdate");
+
+    dateInput.datepicker();
+    dateInput.focus(function () {
+        dateInput.datepicker('show');
+    });
+}
+
+
 
 
         			
