@@ -1,39 +1,42 @@
-document.addEventListener('DOMContentLoaded', (e) => {
+"use strict";
+console.log(jQuery.fn.jquery);
+$(document).ready(function() {
     handleSplashScreen();
     handleLoginForm();
+    handleResetClick();
+    handleRegisterSubmit();
+    favdate();
 });
 
 function handleSplashScreen() {
-    const splash = document.querySelector(".splash");
+    const splash = $(".splash");
 
     setTimeout(() => {
-        splash.addEventListener('animationend', () => {
-            splash.classList.add('animation-done');
+        splash.on('animationend', () => {
+            splash.addClass('animation-done');
         });
-        splash.classList.add('fade-in');
+        splash.addClass('fade-in');
     }, 5000);
 }
 
 function handleLoginForm() {
-    const check = document.querySelector("#check");
-    const password = document.querySelector("#password-field");
-    const loginForm = document.querySelector("#login-form");
-    const errorMsg = document.querySelector("#login-error-msg");
+    const check = $("#check");
+    const password = $("#password-field");
+    const loginForm = $("#login-form");
+    const errorMsg = $("#login-error-msg");
 
     if (check && password && loginForm && errorMsg) {
-        check.addEventListener('click', togglePassword);
+        check.on('click', togglePassword);
 
-        loginForm.addEventListener('submit', (e) => {
+        loginForm.submit(function(e) {
             e.preventDefault();
             toggleError(false);
 
-            const username = document.getElementById('username-field').value;
-            const enteredPassword = document.getElementById('password-field').value;
+            const username = $('#username-field').val();
+            const enteredPassword = $('#password-field').val();
 
-            
             if (username === 'user' && enteredPassword === 'password') {
                 console.log('Login successful');
-                
                 window.location.href = 'about.html';
             } else {
                 toggleError(true);
@@ -44,15 +47,69 @@ function handleLoginForm() {
     }
 
     function togglePassword() {
-        password.type = check.checked ? "text" : "password";
+        password.attr('type', check.prop('checked') ? "text" : "password");
     }
 
     function toggleError(showError) {
-        if (showError) {
-            errorMsg.style.opacity = 1;
-        } else {
-            errorMsg.style.opacity = 0;
-        }
+        errorMsg.css('opacity', showError ? 1 : 0);
     }
 }
 
+function handleResetClick() {
+    const reset = $("#reset");
+
+    if (reset) {
+        reset.click(function() {
+            $("#firstname, #lastname, #email, #email2, #password, #phone, #message, #state, #zipcode").val("");
+
+            window.location.hash = '';
+            window.location.reload();
+            window.scrollTo(0, 0);
+        });
+    } else {
+        console.error("Reset button not found");
+    }
+}
+
+function handleRegisterSubmit() {
+    $("#registration-form").submit(function (e) {
+        console.log('handleRegisterSubmit function called');
+
+        let isValid = true;
+
+        
+        const email = $("#email").val().trim();
+        const email2 = $("#email2").val().trim();
+      
+        if (email2 !== email) {
+            $("#email-match-error").text("Emails do not match.");
+            isValid = false;
+        } else {
+            $("#email-match-error").text("");
+        }
+
+
+        if (!isValid) {
+            e.preventDefault(); 
+            console.log('Form validation failed');
+        } else {
+            console.log('Registration successful');
+            
+        }
+    });
+}
+
+
+function favdate(){
+    const dateInput = $("#favdate");
+
+    dateInput.datepicker();
+    dateInput.focus(function () {
+        dateInput.datepicker('show');
+    });
+}
+
+
+
+
+        			

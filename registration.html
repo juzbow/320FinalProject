@@ -2,9 +2,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register Gentle Wake Account</title>
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
-    <h1>register</h1>
+    <header id="header" style="position: fixed; top: 0; width: 100%; z-index: 100; background-image: linear-gradient(rgb(13, 33, 116), rgb(172, 92, 16)); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+        <div class="main-div" style="display: flex; justify-content: space-between; align-items: center; padding: 10px;">
+            <div id="logo">
+                <a href="index.html">
+                <img id="cat" src="images/catYawn.png" alt="cat yawning logo">
+                </a>
+            </div>
+            <h1 id="home"><a href="index.html">Gentle Wake</a></h1>
+            <div id="nav-bar">
+                <div class="nav-button"><a class="nav-a" href="about.html">About</a></div>
+                <div class="nav-button"><a class="nav-a" href="calendar.html">Calendar</a></div>
+                <div class="nav-button"><a class="nav-a" href="settings.html">Settings</a></div>
+                <div class="nav-button dropdown"
+                    style="color:orange">Account
+                    <div class="dropdown-content">
+                        <a id="dropdown-login-reg" href="index.html">Login</a>
+                        <a id="dropdown-reg-reg" href="registration.html">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <form id="registration-form" action="confirmed.html" method="get">
+        <label for="firstname">First Name<span class="required-field" style="color: red;">*</span></label>
+        <input type="text" name="firstname" id="firstname" placeholder="Tom" required>
+
+        <label for="lastname">Last Name<span class="required-field" style="color: red;">*</span></label>
+        <input type="text" name="lastname" id="lastname" placeholder="Riddle" required>
+
+
+        
+        <label for="email">Email<span class="required-field" style="color: red;">*</span></label>
+        <input type="email" name="email" id="email" placeholder="yourEmailHere@gmail.com" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+              
+        <label for="email2">Re-Enter Email<span class="required-field" style="color: red;">*</span></label>
+        <input type="email" name="email2" id="email2" required>
+        <span id="email-match-error" style="color: red;"></span>
+           
+
+
+
+        <label for="password">Password<span class="required-field" style="color: red;">*</span></label>
+        <input type="password" name="password" id="password" placeholder="password" required pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}">
+        <span class="password-hint">Must be at least 8 characters long and include at least one number and one letter.</span>
+
+        <label for="phone">Phone Number<span class="required-field" style="color: red;">*</span></label>
+        <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+
+        <label for="gender" style="text-decoration: underline; font-size: 20px;">Gender:</label>
+        <div class="radio-container">
+            <div class="radio-label">
+                <input type="radio" name="gender" id="male" value="Male">
+                <label for="male" style="font-size: 18px;">Male</label>
+            </div>
+            <div class="radio-label">
+                <input type="radio" name="gender" id="female" value="Female">
+                <label for="female" style="font-size: 18px;">Female</label>
+            </div>
+            <div class="radio-label">
+                <input type="radio" name="gender" id="other-radio" value="Other">
+                <label for="other-radio" style="font-size: 18px;">Other</label>
+            </div>
+        </div>
+
+        <label for="drinks" style="text-decoration: underline; font-size: 20px;">Favorite Drink(s) Before Bed:</label>
+        <div class="check-container">
+            <div class="check-label">
+                <input type="checkbox" name="coffee" id="coffee" value="Coffee">
+                <label for="coffee" style="font-size: 18px;">Coffee</label>
+            </div>
+            <div class="check-label">
+                <input type="checkbox" name="tea" id="tea" value="Tea">
+                <label for="tea" style="font-size: 18px;">Tea</label>
+            </div>
+            <div class="check-label">
+                <input type="checkbox" name="water" id="water" value="Water">
+                <label for="water" style="font-size: 18px;">Water</label>
+            </div>
+            <div class="check-label">
+                <input type="checkbox" name="milk" id="milk" value="Milk">
+                <label for="milk" style="font-size: 18px;">Milk</label>
+            </div>
+            <div class="check-label">
+                <input type="checkbox" name="alcohol" id="alcohol" value="Alcohol">
+                <label for="alcohol" style="font-size: 18px; position:absolute; padding-left: 20px;">Where's the alcohol?</label>
+            </div>
+        </div>
+
+        
+        <label for="favdate">Select Your Favorite Date</label>
+        <input type="text" name="favdate" id="favdate" placeholder="11/18/2023" autocomplete="off">
+
+
+        <label for="state">State</label>
+        <input type="text" name="state" id="state" list="state-list">
+        <datalist id="state-list">
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI" selected>Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+            <option value="AS">American Samoa</option>
+            <option value="GU">Guam</option>
+            <option value="MP">Northern Mariana Islands</option>
+            <option value="PR">Puerto Rico</option>
+            <option value="UM">United States Minor Outlying Islands</option>
+            <option value="VI">Virgin Islands</option>
+            <option value="NA">Outside of US</option>
+        </datalist>
+
+        <label for="zipcode">Zip Code</label>
+        <input type="text" id="zipcode" name="zipcode" pattern="[0-9]{5}" placeholder="12345">
+
+
+        <label for="message">Tell us why you are excited to use Gentle Wake!</label>
+        <textarea name="message" id="message" cols="20" rows="10" placeholder="Type your message here"></textarea>
+   
+
+        <input type="submit" id="register" value="Register">
+        <input type="reset" id="reset" value="Reset">
+
+
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

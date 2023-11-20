@@ -318,36 +318,306 @@ input {
     text-decoration: underline dotted;
  }
 
- #credits-header
- {
-    color:orange;
-    text-align:center;
-    font-family: 'Pacifico';
-    font-size: 30px;
- }
 
- #credits-subhead
- {
-    color:orange;
-    text-align:center;
+ #registration-form{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    padding-top: 100px;
+    margin: 80px;
+    
+ }
+ #registration-form label{
+    color: rgb(137, 156, 230);
+    font-family: 'Pacifico';
+ }
+ #registration-form input{
+    border-radius: 10px;
+    outline: none;
+    background-color: rgb(245, 159, 79);
+    padding: 0px 0px 5px 5px;
+    color: rgb(13, 33, 116);
     font-family: 'Pacifico';
     font-size: 20px;
- }
- 
- #credits-info
- {
-    color:orange;
-    text-align:center;
-    font-family: 'Pacifico';
-    font-size: 15px;
+    border: 3px solid #000000;
  }
 
- #configHead{
-    color:orange;
-    text-align:center;
-    font-family: 'Pacifico';
-    font-size: 30px;
+ #registration-form input:focus {
+    background-color: rgb(245, 159, 79);
+    width:100%
   }
+
+#registration-form input::placeholder,
+#registration-form textarea::placeholder {
+    color: #3a3a3a;
+}
+
+#registration-form textarea{
+    background-color: rgb(137, 156, 230);
+    font-family: 'Pacifico';
+    color:#3a3a3a;
+    font-size: 18px;
+    border: 3px solid #000000;
+}
+
+  #radio-div{
+    padding:5px;
+  }
+
+#dropdown-login-reg{
+    background-color: rgb(9, 28, 104);
+}
+#dropdown-reg-reg{
+    background-color: rgb(9, 28, 104);
+}
+ 
+
+#dropdown-login-reg:hover {
+    background-color: rgb(55, 74, 149);
+}
+
+#dropdown-reg-reg:hover {
+    background-color: rgb(55, 74, 149);
+}
+
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.radio-label {
+    margin-right: 20px; 
+    display: flex;
+    align-items: center;
+}
+
+.radio-label input {
+    margin-right: 5px; 
+}
+
+.check-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.check-label {
+    margin-right: 10px; 
+    display: flex;
+    align-items: center;
+}
+
+.check-label input {
+    margin-right: 5px; 
+}
+
+#check-div{
+    padding:5px;
+  }
+
+
+.password-hint {
+    font-size: 12px;
+    color: #9f9898;
+    margin-top: 5px;
+    display: block;
+}
+
+ #register,
+ #reset {
+     margin-top: 10px;
+     cursor: pointer;
+     border: 3px solid #000000;
+ }
+
+ .ui-datepicker {
+    display: none;
+    width: 300px;
+    height: 300px;
+    margin: 5px auto 0;
+    font: 12pt;
+    font-family: 'Pacifico';
+    background: linear-gradient(rgb(13, 33, 116), rgb(172, 92, 16));
+    border-radius: 5px;
+}
+
+.ui-datepicker table {
+        width: 100%;
+}
+
+.ui-datepicker-header {
+    border-radius: 5px;
+    background: rgb(9, 28, 104);
+    color: rgb(172, 92, 16);
+    font-family: 'Pacifico';
+    border-width: 2px 0 0 0;
+    border-style: solid;
+    padding: 3px;
+    border-color: #111;
+}
+
+.ui-datepicker-title {
+    text-align: center;
+    font-size: 15px;
+
+}
+
+.ui-datepicker-prev {
+    float: left;
+    cursor: pointer;
+    background-position: center -30px;
+}
+
+.ui-datepicker-next {
+    float: right;
+    cursor: pointer;
+    background-position: center 0px;
+}
+
+.ui-datepicker thead {
+    background-color: rgb(245, 159, 79);
+    
+
+    
+}
+
+.ui-datepicker th {
+    background-color:rgb(245, 159, 79);
+    text-transform: uppercase;
+    font-size: 8pt;
+    color: black;
+    border-radius: 15px;
+}
+
+.ui-datepicker tbody td {
+    padding: 0;
+}
+
+.ui-datepicker tbody td:last-child {
+        border-right: 0px;
+}
+
+.ui-datepicker tbody tr {
+    border-bottom: 1px solid #bbb;
+}
+
+    .ui-datepicker tbody tr:last-child {
+        border-bottom: 0px;
+    }
+
+.ui-datepicker a {
+    text-decoration: none;
+}
+
+.ui-datepicker td span, .ui-datepicker td a {
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #ffffff;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+      background: linear-gradient(rgb(13, 33, 116), rgb(172, 92, 16));
+      color:#ffffff;
+      height:40px;
+      width:40px;
+      border-radius: 15px;
+
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+    background: rgb(0, 0, 0);
+    color: #FFFFFF;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+    background: #33adff;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    color: #e0e0e0;
+    text-shadow: 0px 1px 0px #4d7a85;
+    border: 1px solid #55838f;
+    position: relative;
+    margin: -1px;
+}
+
+.ui-datepicker-unselectable .ui-state-default {
+    background: #D6E4BE;
+    color: #000;
+}
+
+#confirmation-head{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    padding-right: 13%;
+    font-size: 22px;
+    color:rgb(245, 159, 79);
+    font-family: 'Pacifico';
+  
+}
+
+
+#confirmation-content {
+    display: inline-grid;
+    grid-template-columns: 1fr 2fr;
+    padding-left: 10%;
+    justify-content: center;
+    font-size: 20px;
+    color: rgb(245, 159, 79);
+    font-family: 'Pacifico';
+}
+
+#confirmation-content p {
+    margin-right: 50px; 
+    margin-left: 20px;
+}
+
+
+#credits-header
+{
+   color:orange;
+   text-align:center;
+   font-family: 'Pacifico';
+   font-size: 30px;
+}
+
+#credits-subhead
+{
+   color:orange;
+   text-align:center;
+   font-family: 'Pacifico';
+   font-size: 20px;
+}
+
+#credits-info
+{
+   color:orange;
+   text-align:center;
+   font-family: 'Pacifico';
+   font-size: 15px;
+}
+
+#configHead{
+   color:orange;
+   text-align:center;
+   font-family: 'Pacifico';
+   font-size: 30px;
+ }
+
+
+
+
+
+
+
+
 
 
 
