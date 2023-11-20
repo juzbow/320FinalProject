@@ -318,6 +318,36 @@ input {
     text-decoration: underline dotted;
  }
 
+ #credits-header
+ {
+    color:orange;
+    text-align:center;
+    font-family: 'Pacifico';
+    font-size: 30px;
+ }
+
+ #credits-subhead
+ {
+    color:orange;
+    text-align:center;
+    font-family: 'Pacifico';
+    font-size: 20px;
+ }
+ 
+ #credits-info
+ {
+    color:orange;
+    text-align:center;
+    font-family: 'Pacifico';
+    font-size: 15px;
+ }
+
+ #configHead{
+    color:orange;
+    text-align:center;
+    font-family: 'Pacifico';
+    font-size: 30px;
+  }
 
 
 

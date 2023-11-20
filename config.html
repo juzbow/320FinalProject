@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuration</title>
+  <link rel = "stylesheet" href = "styles.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+  <link rel = "stylesheet" href = "config.css">
+
+</head>
+<body>
+
+  <header id="header">
+    <div class="main-div">
+        <div id="logo">
+            <a href="index.html">
+            <img id="cat" src="images/catYawn.png" alt="cat yawning logo">
+            </a>
+        </div>
+        <h1 id="home"><a href="index.html">Gentle Wake</a></h1>
+        <div id="nav-bar">
+            <div class="nav-button"><a class="nav-a" href="about.html">About</a></div>
+            <div class="nav-button"><a class="nav-a" href="calendar.html">Calendar</a></div>
+            <div class="nav-button"><a class="nav-a" href="settings.html">Settings</a></div>
+            <div class="nav-button dropdown"
+                style="color:orange">Account
+                <div class="dropdown-content">
+                    <a id="dropdown-login" href="index.html">Login</a>
+                    <a id="dropdown-reg" href="registration.html">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+
+
+
+<h1 id = "configHead">Configuration Page</h1>
+
+
+
+
+
+
+  <!-- Login Form -->
+  <form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" required>
+
+    <button type="button" onclick="login()">Login</button>
+  </form> 
+
+
+  <!-- Configuration Form -->
+  <form id="configForm" style="display:none;">
+    <label for="eventName">Event Name:</label>
+    <input type="text" id="eventName" required>
+
+    <label for="eventDate">Event Date:</label>
+    <input type="date" id="eventDate" required>
+
+    <label for="startTime">Start Time:</label>
+    <input type="time" id="startTime" required>
+
+    <label for="duration">Duration (in hours):</label>
+    <input type="number" id="duration" min="1" required>
+
+
+    <button type="button" onclick="submitConfig()">Submit</button>
+    <button type="button" onclick="showTable()">Show Table</button>
+    <button type="button" onclick="sortData('date')">Sort by Date</button>
+    <button type="button" onclick="sortData('startTime')">Sort by Start Time</button>
+    <button type="button" onclick="sortData('duration')">Sort by Duration</button>
+  </form>
+
+  <div id="dataTable" style="display:none;">
+    <h2>Configured Events</h2>
+    <table id="eventTable">
+    </table>
+  </div>
+
+<a href = "wakeup.html">wakeup</a>
+
+
+
+
+
+<script src="app.js"></script>
+<script src = "config.js"></script>
+
+</body>
+</html>
