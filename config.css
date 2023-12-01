@@ -17,3 +17,86 @@ li {
 }
 
 
+#configForm button,
+#register,
+#reset {
+    border: 3px solid #000000;
+    border-radius: 10px;
+    outline: none;
+    font-family: 'Pacifico';
+    cursor: pointer;
+    background-color: rgb(245, 159, 79);
+}
+
+#configForm button,
+#register,
+#reset {
+    padding: 10px;
+}
+
+/* Datepicker */
+.ui-datepicker {
+    display: none;
+    width: 300px;
+    height: 300px;
+    margin: 5px auto 0;
+    font: 12pt;
+    font-family: 'Pacifico';
+    background: linear-gradient(rgb(13, 33, 116), rgb(172, 92, 16));
+    border-radius: 5px;
+}
+
+#config-label
+{
+  font-family: 'Pacifico';
+  color: rgb(245, 159, 79);
+}
+
+.config-settings
+{
+  font-family: 'Pacifico';
+  background-color: rgb(245, 159, 79);
+  border: 3px solid #000000;
+  border-radius: 10px;
+
+
+}
+
+/* Data Table */
+#dataTable {
+  display: none;
+  margin-top: 20px;
+}
+
+#eventTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#eventTable th,
+#eventTable td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+#eventTable th {
+  color: rgb(245, 159, 79);
+  background-color: rgb(13, 33, 116);
+  font-family: 'Pacifico';
+}
+
+#eventTable tr {
+  background-color: rgb(245, 159, 79);
+}
+
+#eventTable tr:hover {
+  background-color: rgb(38, 48, 126);
+  color: white;
+}
+
+#config-h2
+{
+  color: rgb(245, 159, 79);
+
+}

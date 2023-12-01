@@ -5,30 +5,32 @@ let configData = [];
 
 
 function login() {
-  const usernameInput = document.getElementById('username');
-  const passwordInput = document.getElementById('password');
+  const usernameInput = document.getElementById('config-username');
+  const passwordInput = document.getElementById('config-password');
+ // const errorMsg = $("#login-error-msg");
+
 
   // Mock authentication, replace with actual authentication logic
   if (usernameInput.value === 'user' && passwordInput.value === 'password') {
     loggedInUser = 'user';
-    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('main-section').style.display = 'none';
+    document.getElementById('login-form').style.display = 'none';
     document.getElementById('configForm').style.display = 'block';
   } else if (usernameInput.value === 'user2' && passwordInput.value === 'password2') {
     loggedInUser = 'user2';
-    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('main-section').style.display = 'none';
+    document.getElementById('login-form').style.display = 'none';
     document.getElementById('configForm').style.display = 'block';
   } else {
     toggleError(true);
   }
+
+  // function toggleError(showError) {
+  //   errorMsg.css('opacity', showError ? 1 : 0);
+  // }
+  
 }
 
-function toggleError(showError) {
-  if (showError) {
-      errorMsg.style.opacity = 1;
-  } else {
-      errorMsg.style.opacity = 0;
-  }
-}
 
 function submitConfig() {
   const eventName = document.getElementById('eventName').value;
