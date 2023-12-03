@@ -1,10 +1,11 @@
 "use strict";
 
-let loggedInUser = null;
+let loggedInUser = localStorage.getItem('loggedInUser');
 let configData = [];
 
 
 function login() {
+
   const usernameInput = document.getElementById('config-username');
   const passwordInput = document.getElementById('config-password');
  // const errorMsg = $("#login-error-msg");
@@ -31,18 +32,6 @@ function login() {
   
 }
 
-
-function submitConfig() {
-  const eventName = document.getElementById('eventName').value;
-  const eventDate = document.getElementById('eventDate').value;
-  const startTime = document.getElementById('startTime').value;
-  const duration = document.getElementById('duration').value;
-
-  configData.push({ user: loggedInUser, eventName, eventDate, startTime, duration });
-
-  alert('Configuration submitted successfully!');
-}
-
 function showTable() {
   document.getElementById('dataTable').style.display = 'block';
 
@@ -62,6 +51,12 @@ function showTable() {
   configData.forEach(config => {
     if (config.user === loggedInUser) {
       const row = table.insertRow();
+
+      // Add a click event listener to each row
+      row.addEventListener('click', function() {
+        window.location.href = 'wakeup.html';
+      });
+
       Object.values(config).forEach(value => {
         const cell = row.insertCell();
         cell.textContent = value;
@@ -88,6 +83,16 @@ function submitConfig() {
   // Save the configuration data to localStorage
   localStorage.setItem('configData', JSON.stringify(configData));
 
-  alert('Configuration submitted successfully!');
+  const submitMessage = document.getElementById('success-message');
+  submitMessage.textContent = 'Submission successful';
+  submitMessage.style.display = 'block';
+  submitMessage.style.fontFamily = 'Pacifico';
+  submitMessage.style.color = 'rgb(245, 159, 79)';
+
+  setTimeout(() => {
+    submitMessage.style.display = 'none';
+  }, 3000);
+
+  //alert('Configuration submitted successfully!');
 }
 

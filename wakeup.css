@@ -1,0 +1,50 @@
+.notification-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px; 
+  color:  rgb(245, 159, 79);
+  font-family: 'Pacifico';
+  font-size: 50px;
+  padding: 15px; 
+  text-align: center; 
+  z-index: 1000; 
+}
+
+.notification {
+  display: inline-block;
+}
+
+.close-button {
+  background-color: rgb(245, 159, 79);
+  color: black; 
+  border: 3px solid #000000;
+  padding: 5px 10px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px; 
+  cursor: pointer; 
+  font-family: 'Pacifico';
+  border-radius: 10px;
+
+
+}
+
+#wakeup-upcoming, #gradientLabel
+{
+  font-family: 'Pacifico';
+  color: rgb(245, 159, 79);
+}
+
+#applyGradient , #gradientSelect
+{
+  font-family: 'Pacifico';
+  background-color: rgb(245, 159, 79);
+  border: 3px solid #000000;
+  border-radius: 10px;
+
+
+}
