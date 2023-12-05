@@ -6,6 +6,8 @@ $(document).ready(function() {
     handleResetClick();
     handleRegisterSubmit();
     favdate();
+    handleLocalStorage()
+
 });
 
 function handleSplashScreen() {
@@ -19,26 +21,75 @@ function handleSplashScreen() {
     }, 5000);
 }
 
+
+
+
+
+
 function handleLoginForm() {
+    const loginForm = $('#login-form');
+    const welcomeMessageHolder = $('#login-error-msg-holder');
+
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const username = localStorage.getItem('username');
+
     const check = $("#check");
     const password = $("#password-field");
-    const loginForm = $("#login-form");
     const errorMsg = $("#login-error-msg");
+    const dropdownLogin = $('#dropdown-login');
 
     if (check && password && loginForm && errorMsg) {
         check.on('click', togglePassword);
 
-        loginForm.submit(function(e) {
+        if (isLoggedIn && username) {
+            
+            loginForm.hide();
+            welcomeMessageHolder.html('<div id = "welcome-message-container"><p id="welcome-message">Welcome to Gentle Wake</p></div>');
+
+            
+            dropdownLogin.text('Logout');
+            dropdownLogin.attr('href', '#');
+            dropdownLogin.off('click').on('click', function () {
+                
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('username');
+                window.location.reload();
+            });
+            $('.dropdown-content #dropdown-reg').hide();
+        } else {
+            
+            dropdownLogin.text('Login');  
+            dropdownLogin.attr('href', 'index.html');  
+            $('.dropdown-content #dropdown-reg').show();
+        }
+
+        loginForm.submit(function (e) {
             e.preventDefault();
             toggleError(false);
 
-            const username = $('#username-field').val();
+            const enteredUsername = $('#username-field').val();
             const enteredPassword = $('#password-field').val();
 
-            if (username === 'user' && enteredPassword === 'password') {
-                console.log('Login successful');
-                window.location.href = 'about.html';
+            if (enteredUsername === 'user' && enteredPassword === 'password') {
+                
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('username', enteredUsername);
+
+                loginForm.hide();
+                welcomeMessageHolder.html('<div id = "welcome-message-container"><p id="welcome-message">Welcome to Gentle Wake</p></div>');
+
+                
+                dropdownLogin.text('Logout');
+                dropdownLogin.attr('href', '#');
+                dropdownLogin.off('click').on('click', function () {
+                    
+                    localStorage.removeItem('isLoggedIn');
+                    localStorage.removeItem('username');
+                    window.location.reload();
+                });
+                $('.dropdown-content #dropdown-reg').hide();
             } else {
+                
                 toggleError(true);
             }
         });
@@ -54,6 +105,8 @@ function handleLoginForm() {
         errorMsg.css('opacity', showError ? 1 : 0);
     }
 }
+
+
 
 function handleResetClick() {
     const reset = $("#reset");
@@ -108,6 +161,55 @@ function favdate(){
         dateInput.datepicker('show');
     });
 }
+
+function handleLocalStorage() {
+    console.log('handleLocalStorage function called');
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const username = localStorage.getItem('username');
+
+    updateNavigationBar(isLoggedIn, username);
+
+    
+    $(window).on('storage', function (e) {
+        if (e.originalEvent.key === 'isLoggedIn' || e.originalEvent.key === 'username') {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const username = localStorage.getItem('username');
+            updateNavigationBar(isLoggedIn, username);
+        }
+    });
+}
+
+
+
+function updateNavigationBar(isLoggedIn, username) {
+    const dropdownLogin = $('#dropdown-login');
+    const originalLogin = $('#original-login-content');
+    const originalRegister = $('#original-register-content');
+
+    if (isLoggedIn) {
+       
+        dropdownLogin.text('Logout');
+        dropdownLogin.attr('href', '#');
+        dropdownLogin.off('click').on('click', function () {
+            
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('username');
+            window.location.reload();
+        });
+
+        
+        originalLogin.hide();
+        originalRegister.hide();
+    } else {
+        
+        dropdownLogin.text('Login');
+        dropdownLogin.attr('href', 'index.html');
+        originalLogin.show();
+        originalRegister.show();
+    }
+}
+
+
 
 
 

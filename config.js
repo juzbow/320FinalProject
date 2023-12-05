@@ -5,31 +5,36 @@ let configData = [];
 
 
 function login() {
-
   const usernameInput = document.getElementById('config-username');
   const passwordInput = document.getElementById('config-password');
- // const errorMsg = $("#login-error-msg");
 
-
-  // Mock authentication, replace with actual authentication logic
+  
   if (usernameInput.value === 'user' && passwordInput.value === 'password') {
     loggedInUser = 'user';
+    localStorage.setItem('loggedInUser', loggedInUser);
     document.getElementById('main-section').style.display = 'none';
     document.getElementById('login-form').style.display = 'none';
     document.getElementById('configForm').style.display = 'block';
+
+    
+    updateNavigationBar(true, loggedInUser);
   } else if (usernameInput.value === 'user2' && passwordInput.value === 'password2') {
     loggedInUser = 'user2';
+    localStorage.setItem('loggedInUser', loggedInUser);
     document.getElementById('main-section').style.display = 'none';
     document.getElementById('login-form').style.display = 'none';
     document.getElementById('configForm').style.display = 'block';
+
+    
+    updateNavigationBar(true, loggedInUser);
   } else {
     toggleError(true);
   }
 
-  // function toggleError(showError) {
-  //   errorMsg.css('opacity', showError ? 1 : 0);
-  // }
-  
+  function toggleError(showError) {
+    const errorMsg = document.getElementById('login-error-msg');
+    errorMsg.style.opacity = showError ? 1 : 0;
+  }
 }
 
 function showTable() {
@@ -47,12 +52,12 @@ function showTable() {
     headerRow.appendChild(th);
   });
 
-  // Populate the table with data
+  
   configData.forEach(config => {
     if (config.user === loggedInUser) {
       const row = table.insertRow();
 
-      // Add a click event listener to each row
+      
       row.addEventListener('click', function() {
         window.location.href = 'wakeup.html';
       });

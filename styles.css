@@ -617,6 +617,18 @@ input {
  }
 
 
+#welcome-message-container{
+    background-color: rgb(242, 138, 58);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+ #welcome-message {
+    font-family: 'Pacifico', cursive; 
+    font-size: 24px;
+    color: black; 
+    margin-top: 10px; 
+}
 
 
 
