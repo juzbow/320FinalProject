@@ -4,31 +4,41 @@
 let loggedInUser = localStorage.getItem('loggedInUser');
 let configData = [];
 
-function login() {
+loadEvents();
 
-  const usernameInput = document.getElementById('wakeup-username');
-  const passwordInput = document.getElementById('wakeup-password');
+document.getElementById('main-section').style.display = 'none';
+document.getElementById('login-form').style.display = 'none';
+document.getElementById('eventsContainer').style.display = 'block';
+document.getElementById('gradients').style.display = 'block';
 
-  if (usernameInput.value === 'user' && passwordInput.value === 'password') {
-    loggedInUser = 'user';
+
+
+// function login() {
+
+//   const usernameInput = document.getElementById('wakeup-username');
+//   const passwordInput = document.getElementById('wakeup-password');
+
+//   if (usernameInput.value === 'user' && passwordInput.value === 'password') {
+//     loggedInUser = 'user';
     document.getElementById('main-section').style.display = 'none';
     document.getElementById('login-form').style.display = 'none';
     document.getElementById('eventsContainer').style.display = 'block';
     document.getElementById('gradients').style.display = 'block';
 
 
-    loadEvents();
-  } else if (usernameInput.value === 'user2' && passwordInput.value === 'password2') {
-    loggedInUser = 'user2';
-    document.getElementById('main-section').style.display = 'none';
-    document.getElementById('login-form').style.display = 'none';
-    document.getElementById('eventsContainer').style.display = 'block';
+//     loadEvents();
+//   } else if (usernameInput.value === 'user2' && passwordInput.value === 'password2') {
+//     loggedInUser = 'user2';
+//     document.getElementById('main-section').style.display = 'none';
+//     document.getElementById('login-form').style.display = 'none';
+//     document.getElementById('eventsContainer').style.display = 'block';
+  //     document.getElementById('gradients').style.display = 'block';
 
-    loadEvents();
-  } else {
-    alert('Invalid username/password');
-  }
-}
+//     loadEvents();
+//   } else {
+//     alert('Invalid username/password');
+//   }
+// }
 
 function showNotification(message) {
   // Create a notification container

@@ -37,7 +37,7 @@
 
 </header>
 
-<h1 id = "credits-header">Events Page</h1>
+<!-- <h1 id = "credits-header">Events Page</h1> -->
 
 <!-- Login Form -->
 <!-- <form id="loginForm">
@@ -88,5 +88,39 @@
 
 <script src="app.js"></script>
 <script src = "wakeup.js"></script>
+<script>
+  function updateNavigationBar(isLoggedIn, username) {
+    const dropdownLogin = document.getElementById('dropdown-login');
+    const originalLogin = document.getElementById('original-login-content');
+    const originalRegister = document.getElementById('original-register-content');
+
+    if (isLoggedIn) {
+      dropdownLogin.textContent = 'Logout';
+      dropdownLogin.href = '#';
+      dropdownLogin.removeEventListener('click', handleLogout);
+      dropdownLogin.addEventListener('click', handleLogout);
+
+      originalLogin.style.display = 'none';
+      originalRegister.style.display = 'none';
+    } else {
+      dropdownLogin.textContent = 'Login';
+      dropdownLogin.href = 'index.html';
+      originalLogin.style.display = 'block';
+      originalRegister.style.display = 'block';
+    }
+  }
+
+  function handleLogout() {
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+    window.location.reload();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const username = localStorage.getItem('username');
+    updateNavigationBar(isLoggedIn, username);
+  });
+</script>
 </body>
 </html>
