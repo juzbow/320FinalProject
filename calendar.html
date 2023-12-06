@@ -6,7 +6,7 @@
   <link rel = "stylesheet" href = "styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
   <link rel = "stylesheet" href = "config.css">
-
+ 
 </head>
 <body>
 
@@ -41,7 +41,8 @@
 
 
   <!-- Login Form -->
- <main id = "main-section">
+ <main>
+  <div id="main-section">
   <div id="login-error-msg-holder">
     <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
   </div>
@@ -52,12 +53,18 @@
 
     <button type="button" id = "login-form-submit" onclick="login()">Login</button>
   </form> 
-
+  </div>
 
 
 
   <div id="calendar-section">
     <div id="calendar-container"></div>
+    <button type="button" id="show-event-input-button">Add Event</button>
+    <div id="event-section" style="display: none;">
+      <input type="text" id="event-input" placeholder="Enter Event">
+      <button type="button" id="add-event-button" onclick="addEvent()">Add Event</button>
+    </div>
+    <div id="event-list"></div>
   </div>
 
 </main>
@@ -66,7 +73,7 @@
 
 
 
-
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
 <script src="app.js"></script>
 <script src = "calendar.js"></script>
 <script>
@@ -103,6 +110,7 @@
     updateNavigationBar(isLoggedIn, username);
   });
 </script>
+
 
 </body>
 </html>

@@ -1,12 +1,39 @@
 "use strict";
 
+document.addEventListener('DOMContentLoaded', function () {
+  const loggedInUser = localStorage.getItem('loggedInUser');
+  const mainSection = document.getElementById('main-section');
+  const loginForm = document.getElementById('login-form');
+  const configForm = document.getElementById('configForm');
 
+  
+  console.log('loggedInUser:', loggedInUser);
 
+  
+  if (loggedInUser) {
+    
+    console.log('User is logged in');
 
-let loggedInUser = localStorage.getItem('loggedInUser');
+    
+    mainSection.style.display = 'none';
+    loginForm.style.display = 'none';
+    configForm.style.display = 'block';
+    updateNavigationBar(true, loggedInUser);
+  } else {
+    
+    console.log('User is not logged in');
 
+    
+    mainSection.style.display = 'block';
+    loginForm.style.display = 'block';
+    configForm.style.display = 'none';
+  }
 
-let configData = JSON.parse(localStorage.getItem('configData')) || [];
+  
+  const loginButton = document.getElementById('login-form-submit');
+  loginButton.addEventListener('click', login);
+});
+
 
 
 
@@ -18,7 +45,13 @@ function login() {
   const usernameInput = document.getElementById('config-username');
   const passwordInput = document.getElementById('config-password');
 
-
+  if (token) {
+    document.getElementById('main-section').style.display = 'none';
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('configForm').style.display = 'block';
+    updateNavigationBar(true, loggedInUser);
+    return;
+  }
   
   if (usernameInput.value === 'user' && passwordInput.value === 'password') {
     loggedInUser = 'user';
