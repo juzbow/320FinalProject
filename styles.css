@@ -632,6 +632,31 @@ input {
 
 
 
+#darkMode
+{   
+    font-family: 'Pacifico';
+    background-color: rgb(245, 159, 79);
+    border: 3px solid #000000;
+    border-radius: 10px;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    background-image: none;
+    color: #fff;
+}
+
+
+/* .config-settings
+{
+  font-family: 'Pacifico';
+  background-color: rgb(245, 159, 79);
+  border: 3px solid #000000;
+  border-radius: 10px;
+
+
+} */
+
 
 
 

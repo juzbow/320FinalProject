@@ -210,6 +210,40 @@ function updateNavigationBar(isLoggedIn, username) {
 }
 
 
+$(document).ready(function () {
+    // Check if dark mode is stored in local storage
+    let isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+    // Apply dark mode if it's enabled
+    if (isDarkMode) {
+        enableDarkMode();
+    }
+
+    // Toggle dark mode 
+    $('#darkMode').on('click', function () {
+        if (isDarkMode) {
+            disableDarkMode();
+        } else {
+            enableDarkMode();
+        }
+        // Update isDarkMode after toggling
+        isDarkMode = !isDarkMode;
+    });
+
+    function enableDarkMode() {
+        $('body').addClass('dark-mode');
+        localStorage.setItem('darkMode', 'true');
+    }
+
+    function disableDarkMode() {
+        $('body').removeClass('dark-mode');
+        localStorage.setItem('darkMode', 'false');
+    }
+});
+
+
+
+
 
 
 

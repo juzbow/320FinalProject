@@ -1,5 +1,8 @@
 "use strict";
 
+
+
+
 let loggedInUser = localStorage.getItem('loggedInUser');
 
 
@@ -14,6 +17,7 @@ let configData = JSON.parse(localStorage.getItem('configData')) || [];
 function login() {
   const usernameInput = document.getElementById('config-username');
   const passwordInput = document.getElementById('config-password');
+
 
   
   if (usernameInput.value === 'user' && passwordInput.value === 'password') {
@@ -42,6 +46,8 @@ function login() {
     const errorMsg = document.getElementById('login-error-msg');
     errorMsg.style.opacity = showError ? 1 : 0;
   }
+
+
 }
 
 
@@ -140,4 +146,19 @@ function submitConfig() {
 
   //alert('Configuration submitted successfully!');
 }
+
+
+//Dark Mode
+// Check if dark mode is stored in local storage
+const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+if (isDarkMode) {
+    enableDarkMode();
+}
+
+function enableDarkMode() {
+    document.body.classList.add('dark-mode');
+}
+
+
 
