@@ -111,9 +111,9 @@ function addEvent() {
     const eventItem = createEventItem(eventText);
     eventList.appendChild(eventItem);
 
-    // Clear the input field
+  
     eventInput.value = '';
-    // Hide the event input section
+   
     const eventSection = document.getElementById('event-section');
     eventSection.style.display = 'none';
   }
@@ -146,14 +146,13 @@ function handleEventClick(event) {
 function editEvent(eventTextElement) {
   const eventText = prompt('Edit Event:', eventTextElement.textContent.trim());
   if (eventText !== null) {
-    // Remove the previous event before updating
+   
     const existingEvent = eventTextElement.parentNode;
     existingEvent.remove();
 
-    // Create a new event item with the updated text
     const eventItem = createEventItem(eventText);
 
-    // Append the new event item
+   
     const eventList = document.getElementById('event-list');
     eventList.appendChild(eventItem);
   }
@@ -162,38 +161,47 @@ function editEvent(eventTextElement) {
 function deleteEvent(eventItem) {
   const qrCodeContainer = eventItem.querySelector('.qr-code-container');
 
-  // Remove the eventItem (including the associated QR code container)
   eventItem.parentNode.removeChild(eventItem);
 
-  // Optional: Clear the QR code container to ensure it's removed from the DOM
+ 
   if (qrCodeContainer) {
     qrCodeContainer.innerHTML = '';
   }
 }
 
 function generateQRCode() {
-  // Get the text for the QR code (you can modify this based on your requirements)
+ 
   const eventText = 'Should be config.html if this was hosted somewhere';
 
-  // Check if the user entered some text
+ 
   if (eventText !== null && eventText.trim() !== '') {
-    // Select the container where you want to display the QR code
+   
     const qrCodeContainer = document.querySelector('.qr-code-container');
 
-    // Clear any existing content in the container
     qrCodeContainer.innerHTML = '';
 
-    // Create a new QRCode instance
+    
     const qr = new QRCode(qrCodeContainer, {
       text: eventText,
       width: 128,
       height: 128,
     });
 
-    // Add an event listener to the QR code container to handle clicks
+    
     qrCodeContainer.addEventListener('click', function() {
-      // Redirect to config.html when the QR code is clicked
+      
       window.location.href = 'config.html';
     });
   }
+}
+
+
+const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+if (isDarkMode) {
+    enableDarkMode();
+}
+
+function enableDarkMode() {
+    document.body.classList.add('dark-mode');
 }

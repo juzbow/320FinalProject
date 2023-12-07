@@ -1,0 +1,98 @@
+#calendar-section{
+    padding-right: 15%;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-family: 'Pacifico';
+    border-radius: 5px;    
+  }
+  
+  .calendar-table th, .calendar-table td {
+    border: 1px solid orange;
+    text-align: center;
+    border-radius: 5px;
+    background: rgb(9, 28, 104);
+    color: rgb(172, 92, 16);
+    font-family: 'Pacifico';
+    padding: 10px;
+  }
+  
+ 
+  .calendar-table td {
+    color: orange;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+  .calendar-table td:hover {
+    background-color: rgb(255, 232, 29);
+  }
+  
+
+  #show-event-input-button, #add-event-button{
+    display:flex;
+    align-content: center;
+    margin-right: 20%;
+    margin-left: 40%;
+    margin-top:3%;
+    border-radius: 20%;
+    background: linear-gradient(rgb(13, 33, 116), rgb(172, 92, 16));
+    font-family: 'Pacifico';
+    color: orange;
+    
+  }
+
+  #event-input {
+    margin-right: 20%; 
+    margin-left: 10%;
+    margin-top:3%;
+    border-radius: 20%;
+    background: linear-gradient(rgb(13, 33, 116), rgb(172, 92, 16));
+    font-family: 'Pacifico';
+    color: orange;
+    font-size: 20px;
+  }
+  
+   #event-list{
+    margin-left: 1%;
+    margin-top:3%;
+    border-radius: 10%;
+    font-family: 'Pacifico';
+    font-size: 20px;
+    color: orange;
+  }
+
+   .edit-button, .delete-button, .link-button {
+    border-radius: 30%;
+    margin-left: 2%; 
+    background: linear-gradient(rgb(13, 33, 116), rgb(172, 92, 16));
+    font-family: 'Pacifico';
+    color: orange;
+}
+
+
+
+.edit-button,
+.delete-button,
+.link-button {
+    padding: 10px;
+    margin-right: 1px; 
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: rgb(255, 232, 29);
+}
+
+.delete-button:hover {
+    background-color: rgb(255, 232, 29);
+}
+
+.link-button:hover {
+    background-color: rgb(255, 232, 29);
+} 
